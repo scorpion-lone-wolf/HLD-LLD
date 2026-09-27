@@ -3,22 +3,44 @@
 Last updated: 2026-09-27
 
 ## Goal
-Prepare step-by-step for HLD and LLD interviews.
+
+Prepare systematically for:
+- LLD / OOD / machine coding;
+- HLD / distributed systems;
+- ML system design;
+- GenAI / LLM system design.
 
 ## Learning rules
+
 - No fixed daily duration.
 - Stop whenever the learner wants.
 - Resume from the exact stopping point.
-- No jumping ahead.
-- Use TypeScript/Node.js for LLD coding unless there is a reason not to.
-- Every meaningful topic ends with copyable Notion-ready notes.
-- Practice and transfer matter more than content coverage.
+- Assume no topic is known until evidenced.
+- Assessment comes before formal teaching.
+- Fill prerequisite gaps as soon as they are detected.
+- No jumping over dependencies.
+- TypeScript / Node.js is the default for LLD code.
+- Every meaningful topic produces Notion-ready notes.
+- Practice and transfer evidence matter more than content coverage.
 
 ## Current position
-- Curriculum revised and ready.
-- Formal HLD/LLD curriculum has not started yet.
-- Start at **Stage 0.1 — HLD vs LLD**.
-- Prior general problem-framing exercise is useful evidence but does not count as completing Stage 0.
 
-## Next session
-Begin Stage 0.1, then 0.2. Do not move to Stage 1 until the Stage 0 mastery gate is demonstrated.
+- Unified curriculum structure is ready.
+- Prior general diagnostic answers are useful evidence, but they are not sufficient to assume design/ML/GenAI foundations.
+- Formal unified baseline assessment has **not** started.
+- No domain is marked interview-ready.
+
+## Exact next step
+
+Begin `ASSESSMENT.md` initial diagnostic.
+
+Start with:
+**Assessment 1 — Problem framing / requirements clarification**
+
+Ask one question only.
+
+After each answer:
+- record evidence;
+- decide whether to probe, remediate, or move to the next assessment area.
+
+Do not start LLD/HLD/ML/GenAI lessons until the assessment has established the appropriate starting prerequisites.
