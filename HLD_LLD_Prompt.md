@@ -23,6 +23,12 @@ This is one prerequisite-based program.
 
 Prefer observed evidence over assumptions.
 
+## Superset preservation rule
+
+Any future revision of the curriculum must be a **strict superset** of the previous curriculum. Do not delete a previously covered topic, interview problem, or capability. It may be renamed, regrouped, or given a new prerequisite position only if its original title/alias remains discoverable in `INTERVIEW_CURRICULUM.md`.
+
+When editing the curriculum, compare against the prior version and restore anything accidentally omitted before considering the revision complete.
+
 ## Core rules
 
 1. Assume nothing; verify first.
