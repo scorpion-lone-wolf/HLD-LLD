@@ -1,703 +1,1030 @@
 # Unified Design Interview Curriculum
 
-This is the single canonical learning path for:
-- Object-Oriented / Low-Level Design (OOD / LLD)
-- classic High-Level / Distributed System Design (HLD)
+This is the canonical step-by-step curriculum for **design interviews**:
+
+- OOD / LLD / machine coding
+- HLD / distributed systems
 - Machine Learning System Design
 - Generative AI / LLM System Design
+- cross-domain AI systems
+- resume / production-system deep dives
+- realistic mocks
 
-It is intentionally **one sequence**, not four separate courses.
+The curriculum is comprehensive, but it is **adaptive**: assessment can fast-pass verified material or temporarily route into a foundation-repair topic.
 
-The order is prerequisite-based: software design foundations first, then distributed systems, then ML systems, then GenAI systems. Later topics reuse earlier ones.
-
----
-
-# How to use this curriculum
-
-For every topic:
-
-1. Why it matters in interviews
-2. Core explanation
-3. Example / diagram
-4. Learner attempt
-5. Feedback
-6. Transfer question
-7. Notion-ready notes
-8. Mastery check
-9. Update progress and exact resume point
-
-## Advancement rule
-
-Do not move forward because a topic was read.
-
-Move forward only when the learner can explain or apply the idea with reasonable independence.
+Every teachable concept has a stable ID so `PROGRESS.md` can store evidence precisely.
 
 ---
 
-# PHASE 0 — Interview Operating System
+# STAGE 0 — Interview Operating System
 
-## 0.1 The four design interview families
+## INT-01 Interview families
+Understand expected outputs for:
+- OOD/LLD
+- machine coding
+- HLD
+- ML system design
+- GenAI system design
+- resume/production deep dive
 
-Understand the distinction and overlap between:
-
-- OOD / LLD: objects, responsibilities, contracts, code quality, extensibility
-- Classic HLD: APIs, data model, scale, storage, distributed systems, reliability
-- ML System Design: classic HLD + data, features, model, offline/online evaluation, serving, drift
-- GenAI System Design: classic HLD + LLM/RAG/agents, retrieval, evaluation, safety, latency/cost
-
-## 0.2 Requirements and scope
-
-Learn:
-- functional requirements
-- non-functional requirements
+## INT-02 Requirements and scope
+- functional vs non-functional requirements
 - constraints
 - assumptions
 - success criteria
-- examples and edge cases
-- scope negotiation
+- examples / counterexamples
+- in-scope vs out-of-scope
 
-## 0.3 Communication
+## INT-03 Communication
+- structured thinking aloud
+- concise assumptions
+- trade-off narration
+- handling pushback
+- avoiding premature technology/model selection
 
-Practice:
-- think aloud
-- state assumptions
-- compare alternatives
-- make a decision and defend it
-- invite interviewer clarification
-- avoid premature technology selection
-
-## 0.4 Universal design framework
+## INT-04 Universal answer structures
 
 ### LLD
-`requirements → entities → responsibilities → relationships → contracts → flow → code → tests → extensibility`
+`requirements → use cases → responsibilities → entities → relationships → contracts → flow → code → tests → extension`
 
-### Classic HLD
-`requirements → NFRs → scale → API → data model → simple architecture → bottlenecks → reliability → observability → trade-offs`
+### HLD
+`requirements → NFRs → scale → APIs → data model → simple architecture → bottlenecks → failures → observability → trade-offs`
 
 ### ML
-`requirements → ML framing → metrics → data → features/representations → model → offline eval → serving → online eval → monitoring/retraining`
+`product goal → ML suitability → baseline → metrics → data/labels → representation/model → offline eval → serving → online eval → monitoring/retraining`
 
 ### GenAI
-`requirements → task framing → data/knowledge → model/RAG/agent choice → evaluation → architecture → serving → safety → monitoring/cost`
+`product goal → suitability → quality criteria → data/knowledge → approach choice → architecture → evaluation → serving → safety → observability/cost`
 
-### Mastery gate
-Given a vague prompt, the learner clarifies before proposing architecture/model/code.
+### Stage gate
+Given a vague prompt, clarify before proposing implementation.
 
 ---
 
-# PHASE 1 — Software Modeling Foundations
+# STAGE 1 — Foundation Repair Layer
 
-## 1.1 OOP for design
+These are not mandatory lectures. Assessment activates only the gaps that matter.
+
+## Programming / CS
+
+### FND-01 TypeScript/JavaScript essentials
+- values/references
+- functions
+- classes
+- interfaces/types
+- generics at interview-useful depth
+- async/Promise basics
+
+### FND-02 Core collections
+- array
+- map/hash map
+- set
+- stack
+- queue/deque
+- heap/priority queue
+- tree/graph recognition
+
+### FND-03 Complexity
+- O(1), O(log n), O(n), O(n log n), O(n²)
+- time vs space
+- amortized intuition
+- common collection operation costs
+
+### FND-04 Errors and testing
+- validation
+- exceptions/result-style errors
+- unit-test basics
+- dependency boundaries
+- deterministic tests
+
+### FND-05 Concurrency basics
+- race condition
+- critical section
+- lock/mutex intuition
+- optimistic vs pessimistic coordination
+- atomicity
+- idempotency intuition
+
+## Backend foundations
+
+### FND-06 Networking
+- DNS
+- TCP connection intuition
+- HTTP/HTTPS
+- request/response lifecycle
+- latency vs throughput
+- WebSocket concept
+- gRPC concept
+
+### FND-07 API fundamentals
+- resources
+- methods
+- status/error contracts
+- pagination
+- versioning
+- idempotency keys
+- synchronous vs asynchronous API
+
+### FND-08 Database fundamentals
+- relational model
+- primary/foreign keys
+- normalization intuition
+- SQL vs NoSQL decision basics
+- read/write access patterns
+
+### FND-09 Indexes and transactions
+- index purpose/cost
+- composite indexes
+- ACID
+- isolation intuition
+- locks
+- lost update / double booking
+
+### FND-10 Interview communication baseline
+- ask clarifying questions
+- state assumptions
+- explain decision → reason → trade-off
+- verify success
+
+### Stage gate
+All critical prerequisites for the next domain are Level 3+ or explicitly scheduled for repair.
+
+---
+
+# STAGE 2 — LLD / OOD Foundations
+
+## LLD-01 Responsibilities and cohesion
+- identify actors/use cases
+- responsibilities
+- high cohesion
+- low coupling
+
+## LLD-02 OOP for design
 - encapsulation
 - abstraction
-- composition vs inheritance
 - polymorphism
-- interfaces/contracts
+- interface-driven design
 
-## 1.2 Object relationships
+## LLD-03 Relationships
 - association
 - aggregation
 - composition
+- inheritance
+- composition vs inheritance
 - multiplicity/cardinality
 - lifecycle ownership
 
-## 1.3 SOLID in practice
-Prioritize:
+## LLD-04 SOLID in practice
 - SRP
 - OCP
-- DIP
-Then:
 - LSP
 - ISP
+- DIP
+- refactor before/after examples
 
-Use refactoring exercises rather than definition memorization.
-
-## 1.4 TypeScript design mechanics
+## LLD-05 TypeScript design mechanics
 - interfaces
 - abstract classes
 - dependency injection
-- error types
-- immutable/value objects where useful
-- modules/packages
+- modules
 - domain vs infrastructure boundaries
+- value objects
+- immutable state where useful
 
-## 1.5 Testability
-- unit-testable services
-- dependency boundaries
-- deterministic logic
-- fakes/mocks/stubs
-- test behavior rather than implementation
+## LLD-06 Testability and invalid states
+- test behavior
+- dependency substitution
+- deterministic core
+- validation
+- state invariants
 
-### Mastery gate
-Model a small domain and implement clean, testable TypeScript without forcing design patterns.
+## LLD-07 Design patterns as tools
 
----
+Required recognition/application:
+- Strategy
+- Factory / Factory Method
+- Observer
+- State
+- Adapter
+- Decorator
 
-# PHASE 2 — Design Patterns as Tools
+Conditional/deeper when problems require them:
+- Command
+- Chain of Responsibility
+- Builder
+- Facade
+- Proxy
+- Composite
 
-Learn patterns only by the problem they solve.
-
-## 2.1 Strategy
-Vary behavior independently.
-
-## 2.2 Factory
-Separate creation from use.
-
-## 2.3 Observer / Pub-Sub
-Notify multiple interested consumers.
-
-## 2.4 State
-Behavior changes with lifecycle/state.
-
-## 2.5 Adapter
-Integrate incompatible interfaces.
-
-## 2.6 Decorator
-Add behavior without rewriting the wrapped object.
-
-## 2.7 Command
-Represent operations/actions explicitly.
-
-## 2.8 Chain of Responsibility
-Pass a request through ordered handlers.
-
-### Deferred unless a real problem needs them
+Recognition only unless target interviews demand more:
+- Abstract Factory
 - Prototype
 - Visitor
-- Abstract Factory as a memorization topic
+- Singleton trade-offs
 
-### Mastery gate
-Given a design change, decide whether a pattern helps and explain the trade-off.
+## LLD-08 Persistence boundary
+- repository abstraction
+- domain vs persistence objects
+- transaction boundary intuition
+
+## LLD-09 Concurrency in LLD
+- shared mutable state
+- race conditions
+- locks
+- idempotent operations
+- double booking / inventory decrement
+
+## LLD-10 Extensibility under curveballs
+- adding new types/behaviors
+- avoiding switch explosion
+- preserving contracts
+- backwards-compatible changes
+
+### LLD foundation gate
+Model a small domain, write testable TypeScript, and handle one requirement change without forced patterns.
 
 ---
 
-# PHASE 3 — LLD Engineering Depth
+# STAGE 3 — LLD Case-Study Ladder
 
-## 3.1 Validation and error handling
-## 3.2 Extensibility under new requirements
-## 3.3 Persistence boundaries
-## 3.4 API/schema thinking in LLD
-## 3.5 Concurrency and race conditions
-## 3.6 Idempotency
-## 3.7 Complexity of key operations
-## 3.8 Runnable code + focused tests
+Use the easiest case whose prerequisites are verified.
 
-### Mastery gate
-Implement a working solution, test it, and adapt it when the interviewer changes a requirement.
+## Tier L1 — modeling and state
 
----
+| Problem | Requires | Primary focus |
+|---|---|---|
+| Parking Lot | LLD-01..06 | entities, relationships, extensibility |
+| Vending Machine | LLD-01..07 | state, inventory, payment behavior |
+| Tic-Tac-Toe | FND-02/03, LLD-01..06 | modeling + algorithmic operations |
+| Deck of Cards / Blackjack | LLD-01..06 | composition, rules |
+| Unix File Search | LLD-01..07 | composite/specification-style filtering |
+| Library Management | LLD-01..06 | entities, borrowing state |
 
-# PHASE 4 — OOD / LLD Case-Study Ladder
+## Tier L2 — workflows / concurrency / integrations
 
-The following includes every publicly listed case-study title from ByteByteGo's Object-Oriented Design Interview course, plus selected open-source supplements.
+| Problem | Requires | Primary focus |
+|---|---|---|
+| Movie Ticket Booking | LLD-08/09 | booking concurrency |
+| Elevator | LLD-07/09 | state + scheduling |
+| ATM | LLD-07..10 | state, transactions, extensibility |
+| Shipping Locker | LLD-01..10 | assignment + state |
+| Restaurant Management | LLD-01..10 | workflows |
+| Notification System | LLD-07/10 | strategy/observer |
+| Splitwise | FND-02/03, LLD-01..10 | balances, extensibility |
+| Logging Framework | LLD-07/10 | chain/strategy, sinks |
+| Task Scheduler | FND-02/05, LLD-07..10 | scheduling, concurrency |
 
-## Tier A — first modeling problems
-1. Parking Lot
-2. Vending Machine
-3. Tic-Tac-Toe
-4. Blackjack / Deck of Cards
-5. Unix File Search
+## Tier L3 — interview-depth / machine coding
 
-## Tier B — state, workflows, and integrations
-6. Movie Ticket Booking
-7. Elevator
-8. Shipping Locker
-9. ATM
-10. Grocery Store
-11. Restaurant Management
-
-## Supplemental public OOD problems
-12. LRU Cache
-13. Hash Map
-14. Call Center
-15. Chat Server
-16. Notification System
-17. Splitwise / Expense Sharing
-18. Logging Framework
-19. Library Management
-20. Task Scheduler
-21. Food Ordering / Restaurant Assignment
-22. Ride Sharing core classes
-23. Wallet / BNPL core classes
-24. In-memory Order Matching Engine
+| Problem | Requires | Primary focus |
+|---|---|---|
+| Food Ordering / Assignment | LLD-01..10 | workflows + policies |
+| Ride Sharing core | LLD-01..10 | state + matching contracts |
+| Wallet / BNPL | FND-09, LLD-01..10 | money, idempotency |
+| In-memory Order Matching Engine | FND-02/03/05, LLD-01..10 | data structures + concurrency |
+| LRU Cache | FND-02/03 | data-structure implementation |
+| Hash Map | FND-02/03 | hashing + resizing |
+| Chat Server core | LLD-01..10 | sessions/messages |
+| Call Center | LLD-07/10 | routing policies |
 
 ### LLD readiness gate
-Solve a fresh medium LLD prompt with runnable TypeScript, tests, edge cases, and one interviewer curveball.
+Complete at least two unfamiliar LLD mocks, including one timed and one with runnable code/tests.
 
 ---
 
-# PHASE 5 — Classic System Design Foundations
+# STAGE 4 — HLD Foundations
 
-## 5.1 Scale from one server to many
-- stateless application servers
-- horizontal vs vertical scaling
-- load balancers
+## HLD-01 Scale and stateless services
+- vertical vs horizontal scaling
+- stateless application tier
+- session state
 
-## 5.2 Back-of-the-envelope estimation
-- users
-- QPS
-- peak QPS
+## HLD-02 Estimation
+- users/DAU
+- average/peak QPS
+- read/write ratio
 - storage
 - bandwidth
-- memory/cache sizing
+- cache sizing
+- order-of-magnitude reasoning
 
-## 5.3 Networking
-- DNS
-- TCP basics
-- HTTP/HTTPS
-- REST
-- WebSocket
-- gRPC when appropriate
+## HLD-03 API + data model
+- APIs from use cases
+- data access patterns
+- schema choice
+- relational vs NoSQL reasoning
 
-## 5.4 API design
-- resources
-- pagination
-- idempotency
-- versioning
-- error contracts
+## HLD-04 Load balancing
+- health checks
+- algorithms
+- sticky sessions trade-off
+- L4/L7 intuition
 
-## 5.5 Data modeling
-- access-pattern-first design
-- SQL vs NoSQL
-- normalization / denormalization
-- indexes
-- transactions
-
-## 5.6 Caching
+## HLD-05 Caching
 - cache-aside
-- write-through / write-back concepts
+- read/write strategies
 - TTL
 - invalidation
+- stale data
 - eviction
 - hot keys
+- cache stampede
 
-## 5.7 Replication
-## 5.8 Partitioning / sharding
-## 5.9 Consistent hashing
-## 5.10 Unique ID generation
-## 5.11 Object/blob storage and CDN
-## 5.12 Search / indexing basics
+## HLD-06 Replication
+- leader/follower
+- read replicas
+- replication lag
+- failover
+- consistency implications
 
-### Mastery gate
-Turn requirements into API + data model + a simple architecture before adding distributed-system complexity.
+## HLD-07 Partitioning / sharding
+- shard key
+- range/hash partitioning
+- rebalancing
+- hotspots
+- cross-shard operations
 
----
+## HLD-08 Consistent hashing
+- ring intuition
+- virtual nodes
+- rebalancing use cases
 
-# PHASE 6 — Distributed Systems and Production Reliability
+## HLD-09 Unique ID generation
+- UUID
+- database sequence
+- timestamp/worker approaches
+- ordering/collision trade-offs
 
-## 6.1 Queues and pub-sub
-## 6.2 At-most-once / at-least-once / effectively-once
-## 6.3 Ordering
-## 6.4 Retries and exponential backoff
-## 6.5 Idempotency
-## 6.6 Distributed transactions
+## HLD-10 Storage / CDN / search
+- object/blob storage
+- CDN
+- search indexes
+- full-text vs transactional DB
+
+## HLD-11 Queues and pub-sub
+- async decoupling
+- queue vs pub-sub
+- consumer groups
+- backpressure
+
+## HLD-12 Delivery, retries, ordering
+- at-most-once
+- at-least-once
+- effectively-once through idempotency
+- exponential backoff
+- poison messages / DLQ
+- ordering scope
+
+## HLD-13 Consistency models
+- strong/eventual
+- read-your-writes intuition
+- CAP correctly scoped
+- quorum intuition
+
+## HLD-14 Distributed transactions
+- why 2PC is difficult
 - saga
-- transactional outbox concept
+- compensating action
+- transactional outbox
 
-## 6.7 Consistency models
-## 6.8 CAP theorem
-## 6.9 Quorums
-## 6.10 Timeouts
-## 6.11 Circuit breakers
-## 6.12 Rate limiting
-## 6.13 Backpressure
-## 6.14 High availability / failover
-## 6.15 SLI / SLO / SLA
-## 6.16 Logs, metrics, traces
-## 6.17 AuthN / AuthZ
-## 6.18 Encryption / secrets
-## 6.19 Cost-aware design
+## HLD-15 Reliability patterns
+- timeout
+- retry
+- circuit breaker
+- bulkhead intuition
+- rate limiting
+- load shedding
+- backpressure
 
-### Mastery gate
-For each major component, explain:
-- what problem it solves
-- when not to use it
-- what failure modes it introduces
-- how failures are detected and recovered
+## HLD-16 Availability / DR
+- redundancy
+- failover
+- RPO/RTO intuition
+- multi-AZ / multi-region trade-offs
+
+## HLD-17 Observability
+- metrics
+- logs
+- traces
+- SLIs/SLOs/SLAs
+- alert quality
+- debugging distributed latency
+
+## HLD-18 Security
+- authentication
+- authorization
+- encryption in transit/at rest
+- secrets
+- least privilege
+- abuse/rate controls
+
+## HLD-19 Cost-aware design
+- storage/compute/network cost
+- managed vs self-hosted
+- overprovisioning vs autoscaling
+- hot path cost
+
+### HLD foundation gate
+Given requirements, produce API + data model + simple architecture and justify every major component.
 
 ---
 
-# PHASE 7 — Classic HLD Case-Study Ladder
+# STAGE 5 — HLD Case-Study Ladder
 
-This bank includes every publicly listed design case from ByteByteGo's System Design Interview course.
+## Tier H1 — foundational
 
-## Foundational
-1. Rate Limiter
-2. Key-Value Store
-3. Unique ID Generator
-4. URL Shortener
-5. Web Crawler
-6. Notification System
-7. News Feed
-8. Chat System
-9. Search Autocomplete
-10. YouTube
-11. Google Drive
+| Problem | Key prerequisites |
+|---|---|
+| URL Shortener | HLD-02/03/05/09 |
+| Rate Limiter | HLD-04/05/11/15 |
+| Key-Value Store | HLD-05/06/07/13 |
+| Unique ID Generator | HLD-02/09 |
+| Notification System | HLD-03/11/12/17 |
+| Search Autocomplete | HLD-05/10 |
+| Web Crawler | HLD-10/11/12 |
 
-## Advanced
-12. Proximity Service
-13. Nearby Friends
-14. Google Maps
-15. Distributed Message Queue
-16. Metrics Monitoring and Alerting
-17. Ad Click Event Aggregation
-18. Hotel Reservation
-19. Distributed Email Service
-20. S3-like Object Storage
-21. Real-time Gaming Leaderboard
-22. Payment System
-23. Digital Wallet
-24. Stock Exchange
+## Tier H2 — distributed product systems
 
-## Supplemental open-source HLD problems
-25. Pastebin
-26. Twitter timeline/search
-27. Search engine
-28. Social graph
-29. Distributed cache
-30. Recommendation platform
-31. Collaborative document editing
-32. Distributed Job Scheduler
-33. Food Delivery Platform
-34. Ride Sharing Platform
+| Problem | Key prerequisites |
+|---|---|
+| Chat System | HLD-03/06/11/12/13 |
+| News Feed | HLD-05/07/11 |
+| Google Drive | HLD-06/07/10/13 |
+| YouTube / Video Streaming | HLD-02/05/10/16 |
+| Proximity Service / Nearby Friends | HLD-03/07/10 |
+| Hotel / Ticket Reservation | FND-09, HLD-07/13/14 |
+| Distributed Email | HLD-11/12/17 |
+| Metrics / Alerting | HLD-11/17 |
+| Ad Click Aggregation | HLD-07/11/12 |
+| Job Scheduler | HLD-11/12/15/17 |
+
+## Tier H3 — advanced
+
+| Problem | Key prerequisites |
+|---|---|
+| Payment System | HLD-12/13/14/17/18 |
+| Digital Wallet | HLD-12/13/14/18 |
+| Stock Exchange | FND-05/09, HLD-07/12/13 |
+| S3-like Storage | HLD-06/07/10/16 |
+| Google Maps | HLD-07/10 |
+| Gaming Leaderboard | HLD-05/07 |
+| Food Delivery | HLD-03/07/11/13 |
+| Ride Sharing | HLD-03/07/10/11 |
+| Collaborative Documents | HLD-12/13 + OT/CRDT concept when needed |
+| Distributed Cache | HLD-05/06/07/08 |
+
+Additional public practice titles:
+- Pastebin
+- Twitter timeline/search
+- Search engine
+- Social graph
+- Recommendation platform
 
 ### HLD readiness gate
-Solve an unseen HLD problem and defend two deep dives without being handed the architecture.
+Complete at least two unfamiliar HLD mocks, including one timed, and defend at least two deep dives.
 
 ---
 
-# PHASE 8 — Machine Learning Foundations for System Design
+# STAGE 6 — ML Foundation Repair
 
-ML system design is not "HLD with a model box." It adds an entire data/model/evaluation lifecycle.
+These foundations support ML system-design interviews. Depth is calibrated to role.
 
-## 8.1 When ML is appropriate
-- business objective
-- heuristic/baseline first
-- ML task formulation
-- input/output
-- prediction unit
+## MLF-01 Probability / statistics intuition
+- mean/variance
+- probability
+- conditional probability
+- distributions intuition
+- sampling bias
+- correlation vs causation
 
-## 8.2 Metrics
-- offline vs online
-- precision / recall / F1
-- ranking metrics
-- calibration
-- business/product metrics
-- guardrail metrics
+## MLF-02 Vector intuition
+- vector
+- dot product
+- norm
+- cosine similarity
+- distance intuition
 
-## 8.3 Data
-- collection
+## MLF-03 ML problem types
+- regression
+- binary/multiclass classification
+- multilabel
+- ranking
+- clustering
+- anomaly detection
+- recommendation
+- forecasting
+
+## MLF-04 Data / features / labels
+- examples
+- features
 - labels
-- leakage
-- sampling
-- class imbalance
-- train/validation/test splits
-- time-based splits
+- target definition
+- label quality
 
-## 8.4 Feature/representation layer
+## MLF-05 Splits and leakage
+- train/validation/test
+- time splits
+- leakage
+- duplicates
+- distribution mismatch
+
+## MLF-06 Training objective intuition
+- loss/objective
+- gradient descent intuition
+- learning rate
+- training vs inference
+
+## MLF-07 Model families
+Interview-level intuition for:
+- linear/logistic models
+- trees / boosted trees
+- nearest neighbors
+- neural networks
+- embeddings
+- when simple models are preferable
+
+## MLF-08 Generalization
+- overfitting/underfitting
+- bias/variance intuition
+- regularization
+- early stopping
+
+## MLF-09 Classification metrics
+- confusion matrix
+- precision
+- recall
+- F1
+- ROC-AUC / PR-AUC intuition
+- threshold choice
+- calibration
+
+## MLF-10 Ranking/recommendation metrics
+- precision@k / recall@k
+- MAP/MRR intuition
+- NDCG
+- CTR/conversion as online metrics
+- diversity/novelty guardrails
+
+## MLF-11 Embeddings / representation learning
+- dense vectors
+- similarity
+- semantic representation
+- embedding training intuition
+- vector retrieval limitations
+
+### ML foundation gate
+Explain an ML problem, metric, data split and baseline without hand-waving.
+
+---
+
+# STAGE 7 — ML System Design
+
+## MLS-01 Product goal → ML framing
+- prediction unit
+- objective
+- constraints
+- when ML is not appropriate
+
+## MLS-02 Baseline + success metrics
+- heuristic baseline
+- offline metric
+- product metric
+- guardrail metric
+
+## MLS-03 Data/label pipeline
+- collection
+- labeling
+- weak/implicit labels
+- delayed labels
+- sampling
+- imbalance
+- privacy
+
+## MLS-04 Feature/representation pipeline
 - feature engineering
 - embeddings
 - feature stores
 - offline/online consistency
 
-## 8.5 Model development
-- baselines
-- architecture choice
-- loss/objective
-- hyperparameters
-- offline evaluation
+## MLS-05 Training pipeline
+- dataset versioning
+- training jobs
+- model registry
+- reproducibility
+- hyperparameter strategy at interview depth
 
-## 8.6 Serving
+## MLS-06 Serving
 - batch vs online
 - model server
-- latency
-- throughput
+- latency/throughput
 - batching
 - autoscaling
 - shadow/canary
+- fallback
 
-## 8.7 Experimentation
+## MLS-07 Experimentation
 - A/B testing
 - guardrails
+- novelty effects
+- sample-ratio mismatch intuition
+
+## MLS-08 Monitoring / drift / retraining
+- data quality
+- feature drift
+- label drift
+- performance decay
+- retraining triggers
 - feedback loops
 
-## 8.8 Monitoring
-- feature/data drift
-- label drift
-- model-performance decay
-- data quality
-- retraining triggers
+## MLS-09 Retrieval and ranking
+- candidate generation
+- ANN/vector retrieval
+- two-stage ranking
+- reranking
+- negative sampling intuition
+- freshness
 
-### Mastery gate
-Design an ML system end-to-end without skipping metrics, data, evaluation, serving, or monitoring.
+## MLS-10 ML platform architecture
+- feature store
+- training platform
+- model serving platform
+- experimentation platform
+- monitoring platform
+
+### ML system-design gate
+Design end-to-end without skipping data, metrics, serving, experimentation or monitoring.
 
 ---
 
-# PHASE 9 — ML System Design Case-Study Ladder
+# STAGE 8 — ML Case-Study Ladder
 
-Every publicly listed ByteByteGo ML System Design case is included here.
+## Level M1 — prediction / classification
+- Harmful Content Detection
+- Spam / Abuse Detection
+- Fraud Detection
+- Ad Click Prediction
+- Churn / Conversion Prediction
+- ETA Prediction
+- Demand Forecasting
+- Dynamic Pricing
 
-1. Visual Search System
-2. Google Street View Blurring System
-3. YouTube Video Search
-4. Harmful Content Detection
-5. Video Recommendation System
-6. Event Recommendation System
-7. Ad Click Prediction on Social Platforms
-8. Similar Listings on Vacation Rental Platforms
-9. Personalized News Feed
-10. People You May Know
+## Level M2 — retrieval / recommendation / ranking
+- People You May Know
+- Event Recommendation
+- Video Recommendation
+- Personalized News Feed
+- Similar Listings
+- Movie/Game/Place Recommendation
+- Replacement Product Recommendation
+- Search Ranking
+- Ads Retrieval and Ranking
 
-## Supplemental open-source ML interview bank
+Requires: MLF-10/11 + MLS-09.
 
-### Recommendation / retrieval / ranking
-11. Movie / Video Recommendation
-12. Friend / Follower Recommendation
-13. Game Recommendation
-14. Replacement Product Recommendation
-15. Rental Recommendation
-16. Place Recommendation
-17. Candidate Retrieval for a Large Catalog
-18. Search Ranking over Hundreds of Millions of Documents
-19. Ads Retrieval and Ranking
+## Level M3 — semantic / multimodal search
+- Visual Search
+- YouTube Video Search
+- Semantic Document Search
+- Image / Video Search
+- Multimodal Search
+- Named Entity Linking
 
-### Search
-20. Full-text Document Search
-21. Semantic Document Search
-22. Image / Video Search
-23. Multimodal Search
+Requires: MLF-11 + MLS-09.
 
-### NLP / classification
-24. Named Entity Linking
-25. Autocomplete / Typeahead
-26. Sentiment Analysis
-27. Language Identification
-28. Spam / Abuse Detection
-29. Fraud Detection
-
-### Forecasting / prediction
-30. ETA Prediction
-31. Demand Forecasting
-32. Dynamic Pricing
-33. Churn / Conversion Prediction
-
-### ML platform
-34. Feature Store
-35. Model Serving Platform
-36. Training Pipeline
-37. Experimentation Platform
-38. ML Monitoring / Drift Detection
+## Level M4 — ML infrastructure
+- Feature Store
+- Training Pipeline
+- Model Serving Platform
+- Experimentation Platform
+- ML Monitoring / Drift Detection
 
 ### ML readiness gate
-Solve a new ML design prompt with explicit product metric, offline metric, data strategy, baseline/model, serving path, online evaluation, and monitoring.
+Two unfamiliar ML system-design mocks, one timed, with explicit metrics/data/model/serving/monitoring.
 
 ---
 
-# PHASE 10 — GenAI / LLM Foundations
+# STAGE 9 — GenAI / Deep-Learning Foundations
 
-## 10.1 LLM application landscape
-- generation vs discriminative ML
-- hosted models vs self-hosting
-- quality / latency / cost triangle
+## GAI-01 Tokens / tokenization / context
+- tokens
+- context window
+- truncation
+- input/output token cost
 
-## 10.2 Prompt/context design
-- system instructions
-- structured outputs
-- context windows
-- prompt injection risk
+## GAI-02 Neural-network intuition
+- layers
+- activations
+- training/inference intuition
+- representation learning
 
-## 10.3 Embeddings and semantic retrieval
-## 10.4 Chunking and indexing
-## 10.5 RAG
-- ingestion path
-- retrieval path
+## GAI-03 Attention + transformer intuition
+- query/key/value intuition
+- self-attention
+- positional information
+- transformer blocks
+- decoder-only intuition
+
+## GAI-04 Autoregressive generation
+- next-token prediction
+- temperature
+- top-k/top-p intuition
+- deterministic vs creative generation
+
+## GAI-05 Embeddings + vector search
+- reuse MLF-11
+- vector index/ANN intuition
+- metadata filters
+- recall vs latency
+
+## GAI-06 Prompting / structured output
+- system/user/tool roles
+- few-shot examples
+- schema/JSON output
+- prompt versioning
+- prompt injection awareness
+
+## GAI-07 Multimodal representation
+- text/image encoders
+- shared embedding spaces
+- captioning/retrieval intuition
+
+## GAI-08 Diffusion-model intuition
+- noise → denoising
+- latent diffusion intuition
+- conditioning
+- sampling cost
+- text-to-image/video conceptual pipeline
+
+## GAI-09 Generative-media evaluation
+- human evaluation
+- quality/alignment
+- diversity
+- safety
+- task-specific automated metrics limitations
+
+### GenAI foundation gate
+Explain tokens, transformer/attention intuition, embeddings and inference trade-offs before advanced LLM systems.
+
+---
+
+# STAGE 10 — GenAI System Design
+
+## GSD-01 Choose the right approach
+Compare:
+- deterministic code
+- classical ML
+- prompt-only LLM
+- RAG
+- fine-tuning
+- agent/tool use
+
+## GSD-02 Retrieval pipeline
+- document ingestion
+- parsing
+- chunking
+- embedding
+- indexing
 - hybrid search
 - reranking
+- metadata filtering
+
+## GSD-03 RAG architecture
+- retrieval
+- context assembly
+- generation
+- citations
 - freshness
-- citations / grounding
+- permissions/ACLs
+- failure/fallback
 
-## 10.6 Fine-tuning / adaptation
-- when prompt/RAG is enough
-- SFT / LoRA concepts
+## GSD-04 Fine-tuning / adaptation
+- when prompting is enough
+- when RAG is enough
+- SFT
+- LoRA/PEFT intuition
 - preference tuning concepts
+- risks of fine-tuning stale facts
 
-## 10.7 Inference serving
-- tokens
-- KV cache
-- batching
+## GSD-05 Inference serving
+- hosted vs self-hosted
 - streaming
+- batching
+- KV-cache intuition
+- quantization intuition
 - autoscaling
 - model routing
-- caching
-- quantization concepts
+- semantic/prompt caching
+- fallback
+- token/compute cost
 
-## 10.8 Evaluation
+## GSD-06 Evaluation
 - golden datasets
-- retrieval metrics
-- answer correctness
+- task correctness
+- retrieval recall/precision
 - groundedness
-- LLM-as-judge limitations
+- citation quality
 - human evaluation
+- LLM-as-judge strengths/limitations
 - online experiments
 
-## 10.9 Safety and guardrails
-- moderation
-- jailbreak/prompt injection
+## GSD-07 Safety / guardrails
+- prompt injection
+- jailbreaks
+- content moderation
 - PII
+- tenant isolation
 - permissions
-- policy routing
+- output validation
+- policy checks
 
-## 10.10 Agents
-- tool calling
+## GSD-08 Agents / tools
+- tool schemas
 - planning
 - state/memory
 - retries
+- idempotency
 - verification
+- permissions
 - human-in-the-loop
-- cost/latency control
+- runaway cost/loop controls
 
-## 10.11 Observability
+## GSD-09 Observability
 - traces
+- prompts/responses with privacy controls
+- retrieval diagnostics
 - tool calls
 - token/cost metrics
-- retrieval quality
-- hallucination/regression monitoring
+- quality regressions
+- safety incidents
 
-### Mastery gate
-Given an AI feature, decide whether it needs prompt-only, RAG, fine-tuning, classical ML, agents, or no AI at all—and justify it.
+## GSD-10 Long context / memory
+- context stuffing trade-offs
+- summarization
+- episodic/profile memory concepts
+- retrieval vs persistent memory
+- freshness/deletion
+
+### GenAI system-design gate
+Select the correct approach and define evaluation, safety, serving, cost and failure handling—not just architecture.
 
 ---
 
-# PHASE 11 — GenAI System Design Case-Study Ladder
+# STAGE 11 — GenAI Case-Study Ladder
 
-Every publicly listed ByteByteGo GenAI System Design case is included here.
+## Level G1 — language applications
+- Gmail Smart Compose
+- Google Translate
+- Content Generation / Summarization
+- Structured Document Extraction
 
-1. Gmail Smart Compose
-2. Google Translate
-3. ChatGPT / Personal Assistant Chatbot
-4. Image Captioning
-5. Retrieval-Augmented Generation
-6. Realistic Face Generation
-7. High-Resolution Image Synthesis
-8. Text-to-Image Generation
-9. Personalized Headshot Generation
-10. Text-to-Video Generation
+## Level G2 — retrieval / RAG
+- Enterprise RAG over Internal Documents
+- Semantic Enterprise Search with Cited Answers
+- Customer Support Chatbot
+- Long-context Q&A
+- Code Assistant over a Repository
+- Retrieval-Augmented Generation
 
-## Supplemental public LLM/AI interview bank
-11. Enterprise RAG over Internal Documents
-12. Customer Support Chatbot with Human Escalation
-13. Semantic Enterprise Search with Cited Answers
-14. Code Assistant over a Large Repository
-15. Coding Agent with Tools and Verification
-16. Agentic Workflow / Personal Assistant
-17. Content Generation / Summarization at Scale
-18. LLM-based Recommendation / Personalization
-19. Multi-tenant LLM Gateway
-20. Document Processing / Extraction Pipeline
-21. Content Moderation with LLM + classifiers
-22. Realtime Streaming Chat
-23. Semantic Search / Embedding Service
-24. Multimodal Assistant
-25. LLM Evaluation Platform
-26. Safety / Guardrail Platform
-27. LLM Observability Platform
-28. Cost-aware Model Router
-29. Long-context Q&A System
-30. Model Serving / Inference Platform
+Requires: GSD-02/03/06/07/09.
+
+## Level G3 — agents
+- Coding Agent with Tools and Verification
+- Personal Assistant / Agentic Workflow
+- Support Agent with Human Escalation
+- Payment/Operations Assistant
+
+Requires: GSD-08 plus HLD-12/15/18.
+
+## Level G4 — GenAI infrastructure
+- Multi-tenant LLM Gateway
+- Cost-aware Model Router
+- LLM Evaluation Platform
+- Safety / Guardrail Platform
+- LLM Observability Platform
+- Model Serving / Inference Platform
+- Realtime Streaming Chat
+
+Requires: GSD-05/06/07/09.
+
+## Level G5 — multimodal / generative media
+- Image Captioning
+- Visual/Multimodal Assistant
+- Realistic Face Generation
+- High-Resolution Image Synthesis
+- Text-to-Image Generation
+- Personalized Headshot Generation
+- Text-to-Video Generation
+
+Requires: GAI-07/08/09 plus relevant serving/evaluation concepts.
 
 ### GenAI readiness gate
-Design a new LLM system with explicit quality evaluation, grounding/safety strategy, latency/cost budget, failure handling, and monitoring.
+Two unfamiliar GenAI mocks, one timed, with explicit evaluation/safety/latency/cost/failure reasoning.
 
 ---
 
-# PHASE 12 — Cross-Domain Interview Practice
+# STAGE 12 — Cross-Domain Systems
 
-Now mix the layers.
+Use only after relevant domain foundations are verified.
 
-Examples:
-- Product search: HLD + retrieval/ranking ML
-- Social feed: HLD + recommendation ML
-- Fraud system: event architecture + ML
-- Customer support: HLD + RAG + agent + human escalation
-- Payment assistant: payments HLD + GenAI permissions/safety
-- Marketplace: transactional HLD + search + recommendations
+- Product Search: HLD + retrieval/ranking ML
+- Social Feed: HLD + recommendation ML
+- Fraud Platform: event architecture + ML
+- Customer Support: HLD + RAG + agents + human escalation
+- Payment Assistant: payment HLD + GenAI permissions/safety
+- Marketplace: transactions + search + recommendation
+- Content Platform: moderation + recommendation + GenAI creation
+- Developer Platform: code search + RAG + agents
 
-Goal:
-Recognize which parts are ordinary software engineering and which genuinely require ML/GenAI.
+Goal: distinguish which subsystem is ordinary software, ML, or GenAI and choose the simplest appropriate technique.
 
 ---
 
-# PHASE 13 — Resume / Production Deep Dive
+# STAGE 13 — Resume / Production Deep Dive
 
-Prepare 2–3 systems from real work.
+Prepare 2–3 real systems.
 
 For each:
 - business problem
-- users and scale
+- users/scale
 - requirements
 - constraints
 - architecture
-- data model
-- your contribution
-- trade-offs
-- incidents/failures
+- API/data model
+- personal contribution
+- key decisions
+- alternatives rejected
+- failures/incidents
 - observability
-- measured outcome
-- what you would change now
+- measured result
+- cost
+- what would change now
 
-For ML/AI systems additionally:
-- dataset
+For ML/AI systems also:
+- dataset/labels
 - metrics
 - model/evaluation
 - serving
-- drift/monitoring
+- experimentation
+- drift
+- safety
 - cost
 
----
-
-# PHASE 14 — Mock Interview Loop
-
-Alternate:
-1. LLD / machine coding
-2. classic HLD
-3. ML system design
-4. GenAI system design
-5. resume deep dive
-
-The learner drives. The interviewer does not reveal the framework.
-
-## Weakness loop
-
-After each mock:
-- identify the weakest 1–2 dimensions
-- return to prerequisite topic
-- do targeted exercises
-- retry with a different problem
+Practice interviewer pushback:
+- Why X?
+- Why not Y?
+- What broke?
+- How did you know?
+- What happens at 10x?
+- What would you redesign today?
 
 ---
 
-# Canonical question-bank policy
+# STAGE 14 — Mock Interview Loop
 
-The case-study titles above are an index of publicly visible prompts/topics. They are not copies of proprietary solution chapters.
+Modes:
 
-When practicing a problem:
+1. Guided
+2. Semi-independent
+3. Realistic untimed mock
+4. Timed mock
+
+Rotate:
+- LLD / machine coding
+- HLD
+- ML system design
+- GenAI system design
+- resume deep dive
+
+After every mock:
+1. grade against `INTERVIEW_READINESS_RUBRIC.md`;
+2. identify 1–2 highest-impact weaknesses;
+3. route back to the exact prerequisite IDs;
+4. retrain with a different problem;
+5. retry later.
+
+---
+
+# Retention loop
+
+Do not rely on one-time understanding.
+
+- after 2–4 related concepts: one short recall
+- before case study: prerequisite recall
+- during mock: natural verification
+- after long break: targeted reassessment
+
+A previously verified topic can move to `revisit`.
+
+---
+
+# Question-bank policy
+
+Problem titles provide coverage, not memorized solutions.
+
+For each problem:
 - start from a short interview-style prompt;
-- solve it independently;
-- use public references only after the attempt;
-- never memorize one source's architecture as the only correct solution.
+- learner drives first;
+- use references only after the attempt;
+- compare alternatives rather than memorizing one canonical diagram.
 
----
-
-# Source coverage used to build this bank
-
-Publicly visible course/index material was used from:
-- ByteByteGo Object-Oriented Design Interview
-- ByteByteGo System Design Interview
-- ByteByteGo Machine Learning System Design Interview
-- ByteByteGo Generative AI System Design Interview
-- System Design Primer
-- AIMLInterviews
-- awesome-ml-system-design
-- awesome-llm-system-design
-
-The question bank should evolve as new relevant public interview patterns appear.
+Publicly visible topic coverage has been informed by ByteByteGo's OOD, System Design, ML System Design and GenAI System Design curricula plus open interview repositories. Proprietary chapter text/solutions are not copied.
