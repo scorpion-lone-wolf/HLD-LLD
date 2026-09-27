@@ -105,6 +105,7 @@ These are not mandatory lectures. Assessment activates only the gaps that matter
 - race condition
 - critical section
 - lock/mutex intuition
+- producer-consumer intuition
 - optimistic vs pessimistic coordination
 - atomicity
 - idempotency intuition
@@ -113,6 +114,7 @@ These are not mandatory lectures. Assessment activates only the gaps that matter
 
 ### FND-06 Networking
 - DNS
+- TCP vs UDP intuition
 - TCP connection intuition
 - HTTP/HTTPS
 - request/response lifecycle
@@ -318,6 +320,7 @@ Complete at least two unfamiliar LLD mocks, including one timed and one with run
 
 ## HLD-03 API + data model
 - APIs from use cases
+- API gateway purpose and trade-offs
 - data access patterns
 - schema choice
 - relational vs NoSQL reasoning
@@ -332,7 +335,9 @@ Complete at least two unfamiliar LLD mocks, including one timed and one with run
 
 ## HLD-05 Caching
 - cache-aside
-- read/write strategies
+- write-through
+- write-back / write-behind
+- read/write strategy trade-offs
 - TTL
 - invalidation
 - stale data
@@ -375,6 +380,7 @@ Complete at least two unfamiliar LLD mocks, including one timed and one with run
 
 ## HLD-11 Queues, pub-sub and data processing
 - async decoupling
+- event-driven architecture
 - queue vs pub-sub
 - consumer groups
 - backpressure
@@ -426,6 +432,7 @@ Complete at least two unfamiliar LLD mocks, including one timed and one with run
 - metrics
 - logs
 - traces
+- distributed tracing
 - correlation / request / trace IDs across service boundaries
 - SLIs/SLOs/SLAs
 - alert quality
@@ -448,7 +455,16 @@ Complete at least two unfamiliar LLD mocks, including one timed and one with run
 - overprovisioning vs autoscaling
 - hot path cost
 
-## HLD-20 Coordination, leadership and consensus
+## HLD-20 Service architecture and evolution
+- modular monolith vs microservices
+- service-boundary selection
+- synchronous vs asynchronous service communication
+- service discovery
+- API gateway/BFF interaction with service boundaries
+- strangler migration strategy
+- avoiding premature microservice decomposition
+
+## HLD-21 Coordination, leadership and consensus
 - leader election
 - distributed lock purpose and failure hazards
 - fencing-token intuition
@@ -508,7 +524,7 @@ Given requirements, produce API + data model + simple architecture and justify e
 | Collaborative Documents | HLD-12/13 + OT/CRDT concept when needed |
 | Video Conferencing / Zoom-style | FND-06, HLD-04/10/15/16/17 | WebRTC, SFU/MCU, media routing, degradation |
 | Global Edge / CDN Platform | HLD-04/05/10/15/16/17/19 | routing, caching, failure isolation, cost |
-| Distributed Coordination Service | HLD-06/12/13/20 | leader election, consensus, failover |
+| Distributed Coordination Service | HLD-06/12/13/21 | leader election, consensus, failover |
 | Distributed Cache | HLD-05/06/07/08 |
 
 Additional public practice titles:
