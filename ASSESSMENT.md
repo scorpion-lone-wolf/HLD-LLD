@@ -1,243 +1,165 @@
 # Assessment & Gap-Filling Protocol
 
-This file defines how the mentor decides where to start and when to remediate.
-
-## Core rule
+## Principle
 
 **Assume nothing. Verify first.**
 
-The learner may have professional experience, but experience alone is not evidence of interview readiness in a specific topic.
+Experience, confidence, and previous courses are context, not mastery evidence. Assessment is progressive; do not turn the beginning of the program into one giant exam.
 
-Assessment is not a one-time gate. It happens:
-1. at the beginning of the program;
-2. before each major domain transition;
-3. when the mentor sees repeated uncertainty or hidden prerequisite gaps;
-4. after remediation, to verify the gap is closed.
+# 1. Profile calibration — not scored
 
----
+At program start, establish:
+- target role(s)
+- target seniority
+- target companies if known
+- expected interview families
+- primary implementation language
+- interview date only if pacing help is wanted
+- 2–3 real systems/projects worth using later in resume deep dives
 
-# Assessment model
+This changes depth and priority, not prerequisite rules.
 
-Use two layers.
+# 2. Unified evidence scale
 
-## Layer 1 — Broad diagnostic
+| Level | Status | Meaning |
+|---:|---|---|
+| U | unassessed | no evidence |
+| 0 | unfamiliar | cannot yet explain/use |
+| 1 | learning | recognizes after explanation |
+| 2 | practicing | uses with guidance |
+| 3 | verified | independently applies to a familiar problem |
+| 4 | transfer-verified | independently applies to an unfamiliar problem and defends trade-offs |
+| R | revisit | prior knowledge needs refresh |
 
-Ask one short problem/question at a time across the major competency areas.
+Topic verification is not the same as domain interview readiness.
 
-Do not dump all questions at once.
+# 3. Initial baseline — lightweight
 
-Initial areas:
+Ask one question at a time across only the shared foundations:
 
-### A. Programming / CS foundations
-- TypeScript / JavaScript fundamentals relevant to design
-- functions, classes, interfaces/types
-- collections and common data structures
-- Big-O reasoning
-- error handling
+1. problem framing / requirements
+2. programming + data structures / complexity
+3. OOP / modeling
+4. API + database/backend fundamentals
+5. concurrency / failure reasoning
+6. basic system-design reasoning
+7. communication / trade-off explanation
+
+When a clear gap appears, stop probing deeper in that branch. Record it and route to the relevant foundation-repair topic.
+
+Do **not** test the whole ML and GenAI curriculum before learning begins.
+
+# 4. Domain-entry assessments
+
+Run only when the learner reaches that domain.
+
+## LLD entry
+Check:
+- TypeScript essentials
+- classes/interfaces/types
+- collections
+- common Big-O
+- OOP responsibilities
+- composition vs inheritance
 - testing basics
 
-### B. OOP / LLD foundations
-- responsibilities and cohesion
-- composition vs inheritance
-- interface design
-- object relationships
-- SOLID reasoning
-- extensibility
-- state modeling
+## HLD entry
+Check:
+- request/response lifecycle
+- HTTP/API basics
+- SQL basics
+- indexes/transactions
+- concurrency intuition
+- latency vs throughput
+- basic cache/queue intuition
 
-### C. Backend / HLD foundations
-- HTTP request lifecycle
-- DNS / TCP / HTTP basics
-- REST/API design
-- SQL and transactions
-- indexes
-- caching
-- queues
-- stateless services
-- load balancing
-
-### D. Distributed systems
-- replication
-- sharding
-- consistency
-- retries
-- idempotency
-- ordering
-- partial failure
-- distributed transactions
-- observability
-
-### E. ML foundations
-- what makes a problem suitable for ML
-- supervised vs unsupervised framing
-- train / validation / test
+## ML entry
+Check:
+- classification/regression/ranking
+- features/labels
+- train/validation/test
 - overfitting
-- features and labels
-- classification / regression / ranking
-- precision / recall / F1
-- embeddings
-- basic probability/statistics intuition
-- offline vs online metrics
+- probability/statistics intuition
+- precision/recall
+- baseline thinking
 
-### F. ML system design
-- data collection and labeling
-- leakage
-- feature pipelines
-- training pipelines
-- batch vs online inference
-- model serving
-- experimentation
-- drift and retraining
-- retrieval/ranking architecture
+## GenAI entry
+Check:
+- tokens/context
+- vectors/embeddings
+- similarity search
+- neural-network/transformer intuition
+- training vs inference
+- evaluation thinking
 
-### G. GenAI foundations
-- tokens and context windows
-- transformer/attention intuition
-- embeddings
-- prompting / structured output
-- RAG
-- fine-tuning vs RAG
-- inference latency/cost
-- hallucination / grounding
+# 5. Targeted micro-diagnostic
 
-### H. GenAI system design
-- retrieval pipeline
-- chunking/indexing
-- reranking
-- evaluation
-- safety / prompt injection
-- agents/tool calling
-- memory/state
-- observability
-- model routing
-- guardrails
-- cost/latency trade-offs
-
-### I. Interview communication
-- clarifying requirements
-- stating assumptions
-- comparing alternatives
-- explaining trade-offs
-- thinking aloud
-- handling interviewer pushback
-
----
-
-# Layer 2 — Targeted micro-diagnostic
-
-When an answer exposes a possible gap, test the prerequisite directly.
+When a later answer exposes a hidden gap, test that prerequisite directly.
 
 Example:
-
 ```text
-Learner struggles with database sharding
-        ↓
-Check: indexes / transactions / replication
-        ↓
-If transactions are weak:
-teach transactions first
-        ↓
-verify
-        ↓
-return to sharding
+sharding unclear
+  ↓
+check indexes + transactions + replication
+  ↓
+teach missing prerequisite
+  ↓
+practice + transfer
+  ↓
+resume sharding
 ```
 
-Another example:
-
+Example:
 ```text
-Learner suggests RAG but cannot explain embeddings
-        ↓
-pause RAG
-        ↓
-assess vector / embedding intuition
-        ↓
-teach embeddings + similarity search
-        ↓
+RAG unclear
+  ↓
+check embeddings + retrieval + ranking metrics
+  ↓
+repair
+  ↓
 verify
-        ↓
+  ↓
 resume RAG
 ```
 
----
+# 6. Fast-pass rule
 
-# Evidence levels
+A topic may be fast-passed only with evidence:
+- explanation in own words;
+- one correct application;
+- one edge case/trade-off or transfer check.
 
-Use these levels for each topic.
+Critical prerequisites should normally be Level 3+ before dependent advanced topics.
 
-| Level | Meaning |
-|---|---|
-| U | Unassessed |
-| 0 | Unfamiliar |
-| 1 | Recognizes when explained |
-| 2 | Can use with guidance |
-| 3 | Can apply independently to a familiar interview problem |
-| 4 | Interview-ready transfer: applies to an unfamiliar problem and defends trade-offs |
+# 7. Gap-filling protocol
 
-Do not infer a score from job title, years of experience, or topic familiarity.
+1. identify the missing prerequisite;
+2. explain why it blocks the current topic;
+3. save the interrupted topic;
+4. teach the minimum complete foundation;
+5. practice it;
+6. transfer-check it;
+7. update `PROGRESS.md`;
+8. resume the interrupted topic.
 
----
+# 8. Retention checks
 
-# Fast-pass rule
+Use lightweight recall:
+- after 2–4 related topics;
+- before a dependent case study;
+- during mocks;
+- after a long break.
 
-A learner does **not** need to sit through a lesson they already demonstrate strongly.
+If recall materially fails, mark the topic `revisit` and repair it before relying on it.
 
-To fast-pass a topic, require evidence such as:
-- correct explanation in own words;
-- correct small application;
-- handling one edge case or trade-off;
-- transfer to a slightly different scenario.
-
-Fast-pass means "verified", not "assumed".
-
----
-
-# Gap-filling rule
-
-When a gap is found:
-
-1. Name the missing prerequisite.
-2. Explain why it blocks the current topic.
-3. Teach only the needed foundation first.
-4. Give a small practice problem.
-5. Give a transfer check.
-6. Update progress.
-7. Resume the original topic.
-
-Do not continue piling advanced concepts on top of an unverified prerequisite.
-
----
-
-# Initial diagnostic order
-
-Do not begin with a full LLD/HLD mock.
-
-Use this sequence:
-
-1. problem framing / requirements
-2. basic programming + complexity
-3. OOP / modeling
-4. database / API fundamentals
-5. concurrency / failure reasoning
-6. classic system-design reasoning
-7. ML fundamentals
-8. ML-system reasoning
-9. GenAI fundamentals
-10. GenAI-system reasoning
-11. communication / trade-off defense
-
-One question at a time.
-
-If the learner is clearly unfamiliar with an area, stop probing deeper and mark the area for teaching. Do not turn the diagnostic into trivia.
-
----
-
-# Reassessment
+# 9. Reassessment triggers
 
 Reassess when:
 - a mastery gate is reached;
-- the learner repeatedly needs hints;
-- a case study exposes a hidden gap;
+- repeated hints are required;
+- a case study reveals a hidden gap;
 - the learner returns after a long break;
-- the learner asks to target a new company/role.
+- target role/company changes;
+- the learner reports that a supposedly known topic is unclear.
 
-The mentor should always prefer evidence over assumptions.
+Assessment is diagnostic, not punitive.
