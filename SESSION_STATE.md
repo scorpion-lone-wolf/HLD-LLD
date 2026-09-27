@@ -26,6 +26,7 @@ This repository covers design-interview preparation. DSA/coding screens, behavio
 - Do not jump over dependencies.
 - TypeScript / Node.js is the default for LLD code.
 - Every curriculum concept that is assessed, fast-passed, repaired, or taught produces structured notebook-ready notes after the learner attempt, using the canonical format in `HLD_LLD_Prompt.md`.
+- Every teaching/assessment note must explicitly show **Stage / Section name → Concept ID → Topic** so the learner can organize notebook notes correctly.
 - Retention is rechecked before dependent case studies and during mocks.
 
 ## Current position
