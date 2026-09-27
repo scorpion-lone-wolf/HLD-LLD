@@ -60,6 +60,8 @@ HLD-12/13/14 delivery + consistency + transactions
       ↓
 HLD-15/16/17/18/19 reliability + DR + observability + security + cost
       ↓
+HLD-20 coordination / leadership / consensus
+      ↓
 HLD case studies
 ```
 
@@ -149,7 +151,8 @@ GAI-09 media evaluation
 # GenAI system-design chain
 
 ```text
-HLD reliability foundations + GAI foundations
+HLD-12/15/17/18 reliability + observability + security
+ + GAI foundations
       ↓
 GSD-01 approach choice
       ↓
