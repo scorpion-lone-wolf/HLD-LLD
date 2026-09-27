@@ -1,54 +1,78 @@
 # Unified Design Interview Preparation
 
-A single, prerequisite-based interview program covering:
+A single, assessment-first program for **design interviews**:
 
-- **OOD / LLD / machine coding**
-- **HLD / distributed systems**
-- **Machine Learning System Design**
-- **Generative AI / LLM System Design**
-- **resume / production-system deep dives**
+- OOD / LLD / machine coding
+- HLD / distributed systems
+- Machine Learning System Design
+- Generative AI / LLM System Design
+- cross-domain AI systems
+- resume / production-system deep dives
+- realistic mock interviews
 
 Default LLD language: **TypeScript / Node.js**.
 
-## Learning philosophy
+> Scope: this repository targets design-interview readiness. DSA/coding-screen, behavioral, SQL-only, and aptitude rounds are separate tracks unless explicitly added later.
 
-This repo does not assume that a topic is known because it is "basic" or because the learner has professional experience.
-
-The flow is:
+## Operating model
 
 ```text
-assess
-  ↓
-identify gaps
-  ↓
-repair prerequisites
-  ↓
-teach next concept
-  ↓
-practice
-  ↓
+profile calibration
+      ↓
+baseline assessment
+      ↓
+foundation repair when needed
+      ↓
+prerequisite-ordered teaching
+      ↓
+guided practice
+      ↓
 transfer check
-  ↓
-mastery gate
-  ↓
-next prerequisite-ordered topic
+      ↓
+retention recall
+      ↓
+case study
+      ↓
+timed mocks
+      ↓
+interview-ready evidence
 ```
 
-No fixed daily study duration. Stop when desired and resume from the exact saved point.
+No topic is assumed known. A learner may fast-pass already-mastered material by demonstrating it.
+
+## One program, clear progression
+
+1. Core foundations and interview framing
+2. LLD / OOD / machine coding
+3. HLD / distributed systems
+4. ML foundations
+5. ML system design
+6. GenAI / LLM foundations
+7. GenAI system design
+8. Cross-domain systems
+9. Resume deep dives
+10. Mock interview loop
+
+If assessment exposes a missing prerequisite, the mentor temporarily enters the relevant foundation-repair topic, verifies it, then returns to the exact interrupted topic.
 
 ## Read order
 
-1. `HLD_LLD_Prompt.md` — mentor behavior
-2. `ASSESSMENT.md` — baseline + gap-detection protocol
-3. `PREREQUISITE_MAP.md` — prevents jumping
-4. `INTERVIEW_CURRICULUM.md` — complete unified roadmap
-5. `INTERVIEW_READINESS_RUBRIC.md` — what "interview ready" means
-6. `PROGRESS.md` — verified evidence
-7. `SESSION_STATE.md` — exact resume point
+1. `HLD_LLD_Prompt.md`
+2. `ASSESSMENT.md`
+3. `PREREQUISITE_MAP.md`
+4. `INTERVIEW_CURRICULUM.md`
+5. `INTERVIEW_READINESS_RUBRIC.md`
+6. `PROGRESS.md`
+7. `SESSION_STATE.md`
+
 ## Important distinction
 
-The question banks are for practice coverage.
+The problem banks provide **coverage**. They do not determine learning order.
 
-They do **not** dictate the learning order.
+Learning order comes from:
+- prerequisite dependencies;
+- assessment evidence;
+- target role/seniority;
+- mastery gates.
 
-The learning order comes from prerequisite dependencies and the learner's assessment evidence.
+No fixed daily duration. Stop whenever desired and resume from the exact saved point.
