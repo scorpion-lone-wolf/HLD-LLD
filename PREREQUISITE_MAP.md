@@ -1,163 +1,185 @@
 # Prerequisite Map
 
-This map prevents topic jumping.
+This is one curriculum with explicit dependency gates. The mentor follows the canonical order in `INTERVIEW_CURRICULUM.md` and uses this map for remediation and no-jump enforcement.
 
-## Foundation chain
+# Shared repair nodes
+
+- FND-01 TypeScript/JavaScript essentials
+- FND-02 Core collections
+- FND-03 Complexity
+- FND-04 Errors/testing
+- FND-05 Concurrency basics
+- FND-06 Networking
+- FND-07 API fundamentals
+- FND-08 Database fundamentals
+- FND-09 Indexes/transactions
+- FND-10 Interview communication
+
+Strong evidence can fast-pass any repair node.
+
+# LLD chain
 
 ```text
-Programming / CS basics
-        ↓
-OOP + modeling
-        ↓
-LLD principles + patterns
-        ↓
+FND-01/02/03/04
+      ↓
+LLD-01 responsibilities
+      ↓
+LLD-02 OOP
+      ↓
+LLD-03 relationships
+      ↓
+LLD-04 SOLID
+      ↓
+LLD-05 TypeScript design mechanics
+      ↓
+LLD-06 testability / invalid states
+      ↓
+LLD-07 relevant patterns
+      ↓
+LLD-08/09/10 persistence + concurrency + extensibility
+      ↓
 LLD case studies
 ```
 
+Patterns are not prerequisites unless the problem actually depends on them.
+
+# HLD chain
+
 ```text
-Networking + APIs + databases
-        ↓
-single-service architecture
-        ↓
-scaling primitives
-        ↓
-distributed systems
-        ↓
+FND-05/06/07/08/09
+      ↓
+HLD-01/02/03 single-service + estimation + API/data model
+      ↓
+HLD-04/05 load balancing + caching
+      ↓
+HLD-06/07/08/09 replication + partitioning + hashing + IDs
+      ↓
+HLD-10/11 storage/search + queues
+      ↓
+HLD-12/13/14 delivery + consistency + transactions
+      ↓
+HLD-15/16/17/18/19 reliability + DR + observability + security + cost
+      ↓
 HLD case studies
 ```
 
+# ML foundation chain
+
 ```text
-ML fundamentals + metrics + data
-        ↓
-model development
-        ↓
-serving + experimentation
-        ↓
-ML system design
+MLF-01 probability/statistics
+MLF-02 vector intuition
+      ↓
+MLF-03 problem types
+      ↓
+MLF-04 data/features/labels
+      ↓
+MLF-05 splits/leakage
+      ↓
+MLF-06 objective/optimization intuition
+      ↓
+MLF-07 model families
+      ↓
+MLF-08 generalization
+      ↓
+MLF-09/10 metrics
+      ↓
+MLF-11 embeddings
 ```
+
+Depth is role-calibrated; conceptual understanding is still verified.
+
+# ML system-design chain
 
 ```text
 ML foundations
-        +
-distributed-system foundations
-        ↓
-LLM/Transformer intuition
-        ↓
-embeddings + retrieval
-        ↓
-RAG / fine-tuning / inference
-        ↓
-agents + safety + evaluation
-        ↓
-GenAI system design
+ + HLD-03/11/17
+      ↓
+MLS-01 framing
+      ↓
+MLS-02 baseline/metrics
+      ↓
+MLS-03 data/labels
+      ↓
+MLS-04 representations
+      ↓
+MLS-05 training
+      ↓
+MLS-06 serving
+      ↓
+MLS-07 experimentation
+      ↓
+MLS-08 monitoring/retraining
+      ↓
+MLS-09 retrieval/ranking
+      ↓
+MLS-10 platform concepts
+      ↓
+ML case studies
 ```
 
----
+# GenAI foundation chain
 
-# Dependency rules
+```text
+MLF-02 + MLF-06 + MLF-11
+      ↓
+GAI-01 tokens/context
+      ↓
+GAI-02 neural-net intuition
+      ↓
+GAI-03 attention/transformer
+      ↓
+GAI-04 generation/sampling
+      ↓
+GAI-05 vector retrieval
+      ↓
+GAI-06 prompting/structured output
+```
 
-## Before LLD case studies, verify
-- basic TypeScript
-- OOP
-- object relationships
-- SOLID reasoning
-- testing
-- error handling
-- basic complexity
-- extensibility
+Generative-media branch:
+```text
+GAI-02
+  ↓
+GAI-07 multimodal representations
+  ↓
+GAI-08 diffusion intuition
+  ↓
+GAI-09 media evaluation
+```
 
-## Before advanced LLD, verify
-- concurrency basics
-- race conditions
-- idempotency
-- persistence boundary
-- API/schema basics
+# GenAI system-design chain
 
-## Before HLD case studies, verify
-- HTTP/API basics
-- SQL/NoSQL basics
-- transactions
-- indexes
-- caching
-- load balancing
-- replication
-- sharding
-- queues
-- consistency
-- failure handling
-- observability
+```text
+HLD reliability foundations + GAI foundations
+      ↓
+GSD-01 approach choice
+      ↓
+GSD-02 retrieval
+      ↓
+GSD-03 RAG
+      ↓
+GSD-04 adaptation/fine-tuning
+      ↓
+GSD-05 inference serving
+      ↓
+GSD-06 evaluation
+      ↓
+GSD-07 safety
+      ↓
+GSD-08 agents/tools
+      ↓
+GSD-09 observability
+      ↓
+GSD-10 long context/memory
+      ↓
+GenAI case studies
+```
 
-## Before ML system design, verify
-- ML problem framing
-- supervised-learning intuition
-- train/validation/test
-- overfitting
-- core evaluation metrics
-- data leakage
-- features/labels
-- embeddings where relevant
-- offline vs online evaluation
+# Case-study routing
 
-## Before recommendation/search ML problems, verify
-- retrieval vs ranking
-- embeddings / similarity
-- ranking metrics
-- negative sampling intuition
-- candidate generation
-- online feedback loops
+Before selecting a case:
+1. read its prerequisites in `INTERVIEW_CURRICULUM.md`;
+2. check those IDs in `PROGRESS.md`;
+3. repair any critical missing prerequisite;
+4. choose the easiest case that exercises the intended skill.
 
-## Before GenAI system design, verify
-- tokens/context
-- transformer/attention intuition
-- embeddings
-- vector search
-- prompting
-- RAG fundamentals
-- classical ML evaluation concepts
-- distributed serving fundamentals
-
-## Before agent-system design, verify
-- tool calling
-- state
-- retries/idempotency
-- permissions
-- failure recovery
-- evaluation
-- observability
-- cost/latency control
-
----
-
-# Remediation examples
-
-### "I know caching"
-Do not accept the statement alone.
-
-Check:
-- cache-aside flow;
-- invalidation;
-- stale data;
-- hot key;
-- when caching makes things worse.
-
-### "I know ML"
-Check:
-- data split;
-- leakage;
-- metric choice;
-- baseline;
-- serving;
-- monitoring.
-
-### "I know RAG"
-Check:
-- ingestion;
-- chunking;
-- embedding;
-- retrieval;
-- reranking;
-- grounding;
-- evaluation;
-- permissions/freshness.
-
-The goal is to reveal hidden gaps before they appear in a mock interview.
+Never pick a random problem merely because it is famous.
