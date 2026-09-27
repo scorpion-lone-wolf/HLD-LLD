@@ -1,40 +1,56 @@
-# HLD & LLD Interview Preparation
+# Unified Design Interview Preparation
 
-Focused, step-by-step interview preparation for backend/software-engineering design rounds.
+A single, prerequisite-based interview program covering:
 
-## How this repository is used
+- **OOD / LLD / machine coding**
+- **HLD / distributed systems**
+- **Machine Learning System Design**
+- **Generative AI / LLM System Design**
+- **resume / production-system deep dives**
 
-This is not a checklist to rush through. Topics are prerequisite-ordered and each stage has a mastery gate.
+Default LLD language: **TypeScript / Node.js**.
 
-Default language for LLD coding: **TypeScript / Node.js**.
+## Learning philosophy
 
-Each topic produces:
-1. explanation and intuition;
-2. interview angle;
-3. guided practice;
-4. learner attempt;
-5. feedback;
-6. Notion-ready notes;
-7. recall/transfer check.
+This repo does not assume that a topic is known because it is "basic" or because the learner has professional experience.
 
-## Start here
+The flow is:
 
-1. Read `HLD_LLD_Prompt.md`.
-2. Read `INTERVIEW_CURRICULUM.md`.
-3. Read `SESSION_STATE.md`.
-4. Continue from the exact current topic.
+```text
+assess
+  ↓
+identify gaps
+  ↓
+repair prerequisites
+  ↓
+teach next concept
+  ↓
+practice
+  ↓
+transfer check
+  ↓
+mastery gate
+  ↓
+next prerequisite-ordered topic
+```
 
-## Core rule
+No fixed daily study duration. Stop when desired and resume from the exact saved point.
 
-**No jumping ahead.** If a later topic needs an earlier concept, learn the prerequisite first.
+## Read order
 
-Progress is based on demonstrated ability, not time spent or number of modules completed.
+1. `HLD_LLD_Prompt.md` — mentor behavior
+2. `ASSESSMENT.md` — baseline + gap-detection protocol
+3. `PREREQUISITE_MAP.md` — prevents jumping
+4. `INTERVIEW_CURRICULUM.md` — complete unified roadmap
+5. `INTERVIEW_READINESS_RUBRIC.md` — what "interview ready" means
+6. `PROGRESS.md` — verified evidence
+7. `SESSION_STATE.md` — exact resume point
+8. `RESEARCH_NOTES.md` — rationale and public-source research
 
-## Files
+## Important distinction
 
-- `HLD_LLD_Prompt.md` — instructor rules
-- `INTERVIEW_CURRICULUM.md` — ordered roadmap and mastery gates
-- `PROGRESS.md` — topic-by-topic evidence tracker
-- `SESSION_STATE.md` — exact resume point
-- `RESEARCH_NOTES.md` — why the curriculum is structured this way
-- `archive/HLD_LLD_Prompt_v2.md` — previous version
+The question banks are for practice coverage.
+
+They do **not** dictate the learning order.
+
+The learning order comes from prerequisite dependencies and the learner's assessment evidence.
