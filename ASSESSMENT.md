@@ -69,7 +69,10 @@ Do not show assessment notes before the learner attempt if they would reveal the
 Use this structure:
 
 ```text
-📓 NOTEBOOK NOTES — <Concept ID> <Topic>
+📓 NOTEBOOK NOTES
+
+Stage / Section: <Stage number — Section name>
+Concept: <Concept ID — Topic>
 
 Status:
 - Assessment result / current level:
@@ -92,6 +95,8 @@ Recall questions:
 1.
 2.
 ```
+
+Every note must clearly identify the curriculum location as **Stage / Section name → Concept ID → Topic**.
 
 Fast-passed topics still receive concise, complete notes. Topics with gaps receive the correction plus the prerequisite/next action. Profile calibration is not a curriculum concept assessment and does not require concept notes.
 
