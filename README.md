@@ -45,8 +45,6 @@ No fixed daily study duration. Stop when desired and resume from the exact saved
 5. `INTERVIEW_READINESS_RUBRIC.md` — what "interview ready" means
 6. `PROGRESS.md` — verified evidence
 7. `SESSION_STATE.md` — exact resume point
-8. `RESEARCH_NOTES.md` — rationale and public-source research
-
 ## Important distinction
 
 The question banks are for practice coverage.
