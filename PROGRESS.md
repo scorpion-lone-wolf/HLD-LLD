@@ -21,7 +21,11 @@ Topic verification does not mean domain interview-ready.
 | Target role(s) | not collected |
 | Target seniority | not collected |
 | Target companies | not collected |
+| Target-company overlay | not collected |
 | Expected interview families | not collected |
+| Known round format(s) | not collected |
+| Code must run? | not collected |
+| Internet/docs/AI policy | not collected |
 | Primary LLD language | TypeScript / Node.js |
 | Interview date / pacing constraint | not collected |
 
@@ -71,7 +75,7 @@ Concept IDs are defined in `INTERVIEW_CURRICULUM.md`, e.g. `FND-09`, `LLD-04`, `
 Modes:
 - guided
 - semi-independent
-- mock
+- realistic untimed mock
 - timed mock
 
 ## Domain readiness
@@ -82,6 +86,7 @@ Modes:
 | HLD | not-ready | no mocks yet |
 | ML System Design | not-ready | no mocks yet |
 | GenAI System Design | not-ready | no mocks yet |
+| Resume / Production Deep Dive | not-ready | no mock/deep-dive evidence yet |
 
 ## Evidence entry template
 
