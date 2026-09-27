@@ -1,91 +1,121 @@
 # Interview Readiness Rubric
 
-The learner is interview-ready only when performance is repeatable across unfamiliar prompts.
+Interview-ready means **repeatable performance on unfamiliar prompts**, not lesson completion.
 
-# Universal dimensions
+## Evidence levels
+
+| Level | Meaning |
+|---:|---|
+| U | unassessed |
+| 0 | unfamiliar |
+| 1 | learning |
+| 2 | practicing with guidance |
+| 3 | verified on a familiar problem independently |
+| 4 | transfer-verified on an unfamiliar problem with trade-off defense |
+| R | revisit |
+
+A domain cannot be interview-ready while a critical prerequisite is below Level 3.
+
+## Universal dimensions
 
 | Dimension | Ready behavior |
 |---|---|
 | Requirements | Clarifies scope before solutioning |
-| Communication | Thinks aloud with structure |
+| Communication | Explains reasoning in a structured way |
 | Assumptions | States and validates assumptions |
-| Trade-offs | Compares realistic alternatives |
-| Simplicity | Starts simple, adds complexity only when needed |
-| Verification | Defines how correctness/success will be checked |
-| Adaptability | Handles interviewer curveballs without collapsing the design |
+| Trade-offs | Compares plausible alternatives |
+| Simplicity | Starts simple and adds complexity only when needed |
+| Verification | Defines correctness/success signals |
+| Adaptability | Handles requirement changes without losing structure |
+| Time management | Reaches important deep dives within the interview window |
 
-# LLD readiness
+## LLD / OOD readiness
 
 The learner can:
-- clarify scope;
-- identify core objects/responsibilities;
-- model relationships correctly;
-- choose appropriate collections/data structures;
+- clarify use cases and scope;
+- identify responsibilities and entities;
+- model relationships and ownership;
+- choose appropriate data structures;
 - write clean TypeScript;
-- produce runnable/testable core logic;
-- handle errors and invalid states;
-- adapt to new requirements;
-- identify concurrency issues when relevant;
-- use patterns because they fit, not to show them off.
+- produce runnable/testable logic when required;
+- model invalid states and errors;
+- adapt to a new requirement;
+- identify race conditions when relevant;
+- justify patterns rather than force them;
+- reason about complexity of important operations.
 
-# HLD readiness
+Practice all three formats:
+1. class/design discussion;
+2. design + working code/tests;
+3. extend/refactor an existing codebase.
+
+## HLD readiness
 
 The learner can:
-- define functional and non-functional requirements;
+- negotiate functional and non-functional scope;
 - estimate scale when useful;
-- design APIs;
-- model data around access patterns;
-- start from a simple architecture;
-- introduce caching/queues/sharding/etc. only when justified;
-- reason about consistency and partial failure;
-- discuss reliability and observability;
+- define API contracts;
+- choose a data model from access patterns;
+- start with a simple viable architecture;
+- justify caching/queues/replication/sharding;
+- reason about consistency, duplicates and partial failure;
+- discuss reliability, security and observability;
 - identify bottlenecks;
 - defend trade-offs;
-- evolve the design under 10x/100x constraints.
+- evolve under increased scale or new constraints.
 
-# ML system-design readiness
+## ML system-design readiness
 
 The learner can:
-- translate product goal into ML task;
 - decide whether ML is appropriate;
-- establish heuristic/baseline;
-- choose product + offline metrics;
-- explain data/label strategy;
+- translate product goals into an ML task;
+- establish a heuristic/non-ML baseline;
+- choose product, offline and guardrail metrics;
+- define data and labeling strategy;
 - prevent leakage;
-- choose reasonable feature/representation and model family;
-- design training pipeline;
-- design online/batch serving;
-- plan A/B testing;
-- monitor data/model drift;
-- define retraining strategy;
-- reason about feedback loops and bias.
+- reason about sampling/imbalance;
+- choose a reasonable representation/model family;
+- explain training and offline evaluation;
+- design batch/online serving;
+- plan online experiments;
+- detect train/serve skew and drift;
+- define monitoring/retraining;
+- identify feedback loops, bias and failure modes.
 
-# GenAI system-design readiness
+## GenAI system-design readiness
 
 The learner can:
-- decide whether LLMs are appropriate;
-- choose prompt-only vs RAG vs fine-tuning vs agents;
-- explain retrieval/indexing/chunking/reranking;
-- design quality evaluation;
-- address hallucination/grounding;
-- address prompt injection/permissions/PII;
-- reason about context limits;
-- design serving with latency/cost considerations;
-- reason about caching/model routing/fallbacks;
-- design tool/agent failure handling;
-- include observability;
-- define human escalation where needed.
+- decide whether GenAI is appropriate;
+- choose among deterministic logic, classical ML, prompt-only, RAG, fine-tuning and agents;
+- explain tokens/context/embeddings at interview depth;
+- design retrieval/chunking/indexing/reranking;
+- handle freshness and access permissions;
+- define answer/retrieval quality evaluation;
+- reason about hallucination and grounding;
+- address prompt injection, PII and guardrails;
+- design inference with latency/cost constraints;
+- reason about caching, batching, routing and fallbacks;
+- design agent/tool failure handling and human escalation;
+- include observability/regression monitoring;
+- for generative-media prompts, explain relevant model/evaluation pipeline at appropriate depth.
 
-# Mock-interview graduation rule
+## Mock progression
 
-Do not call a domain interview-ready based on one strong mock.
+1. Guided
+2. Semi-independent
+3. Realistic untimed mock
+4. Timed mock
 
-Require:
-- at least two unfamiliar prompts;
-- independent structure;
-- no critical prerequisite gap;
-- reasonable trade-off defense;
-- one curveball handled;
-- communication that would be understandable to an interviewer.
+## Domain graduation rule
 
-The purpose is not a numerical badge. It is evidence that the performance transfers.
+A domain is interview-ready only when all are true:
+
+1. critical prerequisites are Level 3+;
+2. core reasoning skills include multiple Level 4 transfer checks;
+3. at least two unfamiliar mocks are completed;
+4. at least one mock is timed;
+5. one meaningful interviewer curveball is handled;
+6. no unresolved critical gap remains;
+7. communication is understandable without the mentor reconstructing intent.
+
+Do not average away a critical weakness with strengths elsewhere.
