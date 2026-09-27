@@ -12,9 +12,13 @@ At program start, establish:
 - target role(s)
 - target seniority
 - target companies if known
+- target-company/archetype overlay from `TARGET_COMPANY_OVERLAYS.md`
 - expected interview families
+- known round format(s), if available
 - primary implementation language
 - interview date only if pacing help is wanted
+- whether code must run in the real round
+- whether internet/docs/AI assistance are permitted in the real round, if known
 - 2–3 real systems/projects worth using later in resume deep dives
 
 This changes depth and priority, not prerequisite rules.
@@ -72,6 +76,8 @@ Check:
 - concurrency intuition
 - latency vs throughput
 - basic cache/queue intuition
+- failure/retry/idempotency intuition
+- ability to state an assumption and derive a rough estimate
 
 ## ML entry
 Check:
@@ -82,6 +88,7 @@ Check:
 - probability/statistics intuition
 - precision/recall
 - baseline thinking
+- ability to connect an offline metric to a product goal
 
 ## GenAI entry
 Check:
@@ -91,6 +98,7 @@ Check:
 - neural-network/transformer intuition
 - training vs inference
 - evaluation thinking
+- ability to explain when deterministic software, classical ML, prompt-only, RAG or agents would be inappropriate
 
 # 5. Targeted micro-diagnostic
 
