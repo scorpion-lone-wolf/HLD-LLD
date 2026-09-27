@@ -53,6 +53,48 @@ When a clear gap appears, stop probing deeper in that branch. Record it and rout
 
 Do **not** test the whole ML and GenAI curriculum before learning begins.
 
+## 3.1 Notebook notes after every concept assessment
+
+For every curriculum concept that is assessed, provide **structured notebook-ready notes after the learner answers and the assessment result is determined**.
+
+This applies when the concept is:
+- fast-passed;
+- verified;
+- partially understood;
+- marked for repair/revisit;
+- taught immediately after a discovered gap.
+
+Do not show assessment notes before the learner attempt if they would reveal the answer.
+
+Use this structure:
+
+```text
+📓 NOTEBOOK NOTES — <Concept ID> <Topic>
+
+Status:
+- Assessment result / current level:
+- What was demonstrated:
+- Gap or correction (if any):
+
+Definition:
+Why it matters:
+Mental model:
+Key concepts:
+How it works:
+Example:
+Trade-offs:
+When to use:
+When not to use:
+Failure modes / pitfalls:
+Interview angle:
+What to say in an interview:
+Recall questions:
+1.
+2.
+```
+
+Fast-passed topics still receive concise, complete notes. Topics with gaps receive the correction plus the prerequisite/next action. Profile calibration is not a curriculum concept assessment and does not require concept notes.
+
 # 4. Domain-entry assessments
 
 Run only when the learner reaches that domain.
