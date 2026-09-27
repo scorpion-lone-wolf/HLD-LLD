@@ -269,6 +269,7 @@ Use the easiest case whose prerequisites are verified.
 | ATM | LLD-07..10 | state, transactions, extensibility |
 | Shipping Locker | LLD-01..10 | assignment + state |
 | Restaurant Management | LLD-01..10 | workflows |
+| Grocery Store | LLD-01..10 | inventory, checkout, extensibility |
 | Notification System | LLD-07/10 | strategy/observer |
 | Splitwise | FND-02/03, LLD-01..10 | balances, extensibility |
 | Logging Framework | LLD-07/10 | chain/strategy, sinks |
@@ -454,6 +455,7 @@ Given requirements, produce API + data model + simple architecture and justify e
 | Proximity Service / Nearby Friends | HLD-03/07/10 |
 | Hotel / Ticket Reservation | FND-09, HLD-07/13/14 |
 | Distributed Email | HLD-11/12/17 |
+| Distributed Message Queue | HLD-06/07/11/12/13/17 |
 | Metrics / Alerting | HLD-11/17 |
 | Ad Click Aggregation | HLD-07/11/12 |
 | Job Scheduler | HLD-11/12/15/17 |
