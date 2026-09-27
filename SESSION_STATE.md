@@ -25,7 +25,7 @@ This repository covers design-interview preparation. DSA/coding screens, behavio
 - Fast-pass already-mastered topics with evidence.
 - Do not jump over dependencies.
 - TypeScript / Node.js is the default for LLD code.
-- Every meaningful topic produces Notion-ready notes.
+- Every curriculum concept that is assessed, fast-passed, repaired, or taught produces structured notebook-ready notes after the learner attempt, using the canonical format in `HLD_LLD_Prompt.md`.
 - Retention is rechecked before dependent case studies and during mocks.
 
 ## Current position
