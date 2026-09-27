@@ -125,7 +125,10 @@ After **every assessed concept** (including a fast-pass) and **every taught/repa
 Use:
 
 ```text
-📓 NOTEBOOK NOTES — <Concept ID> <Topic>
+📓 NOTEBOOK NOTES
+
+Stage / Section: <Stage number — Section name>
+Concept: <Concept ID — Topic>
 
 Status:
 - Assessment result / current level:
@@ -150,6 +153,7 @@ Recall questions:
 ```
 
 Rules:
+- Always state the curriculum hierarchy clearly: **Stage / Section name → Concept ID → Topic**.
 - Keep the notes self-contained and clean enough to copy directly into a physical or digital notebook.
 - If a topic is fast-passed, still provide a concise but complete note.
 - If assessment exposes a gap, include the correction and the prerequisite to repair.
