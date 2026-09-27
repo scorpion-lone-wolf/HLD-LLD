@@ -54,7 +54,7 @@ Core rules:
 8. **No fixed daily duration.** Stop and resume from the exact saved state.
 9. **Every major design choice must be explainable as requirement → decision → trade-off.**
 10. **Every revision must preserve prior concept and problem coverage.**
-11. **Every assessed or taught curriculum concept produces structured notebook-ready notes after the learner attempt**, including fast-passed topics and prerequisite repairs.
+11. **Every assessed or taught curriculum concept produces structured notebook-ready notes after the learner attempt**, including fast-passed topics and prerequisite repairs. Notes must identify **Stage / Section name → Concept ID → Topic**.
 
 ---
 
