@@ -1030,3 +1030,137 @@ For each problem:
 - compare alternatives rather than memorizing one canonical diagram.
 
 Publicly visible topic coverage has been informed by ByteByteGo's OOD, System Design, ML System Design and GenAI System Design curricula plus open interview repositories. Proprietary chapter text/solutions are not copied.
+
+---
+
+# Legacy Coverage Guarantee — Do Not Remove
+
+This section preserves the exact interview-problem titles that existed in the earlier unified curriculum. The structured ladders above may rename/group problems for learning order, but **every title below remains part of the required practice bank**.
+
+Future curriculum revisions must be a **strict superset** of this bank: topics/questions may be added, regrouped, or aliased, but not removed.
+
+1. Parking Lot
+2. Vending Machine
+3. Tic-Tac-Toe
+4. Blackjack / Deck of Cards
+5. Unix File Search
+6. Movie Ticket Booking
+7. Elevator
+8. Shipping Locker
+9. ATM
+10. Grocery Store
+11. Restaurant Management
+12. LRU Cache
+13. Hash Map
+14. Call Center
+15. Chat Server
+16. Notification System
+17. Splitwise / Expense Sharing
+18. Logging Framework
+19. Library Management
+20. Task Scheduler
+21. Food Ordering / Restaurant Assignment
+22. Ride Sharing core classes
+23. Wallet / BNPL core classes
+24. In-memory Order Matching Engine
+25. Rate Limiter
+26. Key-Value Store
+27. Unique ID Generator
+28. URL Shortener
+29. Web Crawler
+30. News Feed
+31. Chat System
+32. Search Autocomplete
+33. YouTube
+34. Google Drive
+35. Proximity Service
+36. Nearby Friends
+37. Google Maps
+38. Distributed Message Queue
+39. Metrics Monitoring and Alerting
+40. Ad Click Event Aggregation
+41. Hotel Reservation
+42. Distributed Email Service
+43. S3-like Object Storage
+44. Real-time Gaming Leaderboard
+45. Payment System
+46. Digital Wallet
+47. Stock Exchange
+48. Pastebin
+49. Twitter timeline/search
+50. Search engine
+51. Social graph
+52. Distributed cache
+53. Recommendation platform
+54. Collaborative document editing
+55. Distributed Job Scheduler
+56. Food Delivery Platform
+57. Ride Sharing Platform
+58. Visual Search System
+59. Google Street View Blurring System
+60. YouTube Video Search
+61. Harmful Content Detection
+62. Video Recommendation System
+63. Event Recommendation System
+64. Ad Click Prediction on Social Platforms
+65. Similar Listings on Vacation Rental Platforms
+66. Personalized News Feed
+67. People You May Know
+68. Movie / Video Recommendation
+69. Friend / Follower Recommendation
+70. Game Recommendation
+71. Replacement Product Recommendation
+72. Rental Recommendation
+73. Place Recommendation
+74. Candidate Retrieval for a Large Catalog
+75. Search Ranking over Hundreds of Millions of Documents
+76. Ads Retrieval and Ranking
+77. Full-text Document Search
+78. Semantic Document Search
+79. Image / Video Search
+80. Multimodal Search
+81. Named Entity Linking
+82. Autocomplete / Typeahead
+83. Sentiment Analysis
+84. Language Identification
+85. Spam / Abuse Detection
+86. Fraud Detection
+87. ETA Prediction
+88. Demand Forecasting
+89. Dynamic Pricing
+90. Churn / Conversion Prediction
+91. Feature Store
+92. Model Serving Platform
+93. Training Pipeline
+94. Experimentation Platform
+95. ML Monitoring / Drift Detection
+96. Gmail Smart Compose
+97. Google Translate
+98. ChatGPT / Personal Assistant Chatbot
+99. Image Captioning
+100. Retrieval-Augmented Generation
+101. Realistic Face Generation
+102. High-Resolution Image Synthesis
+103. Text-to-Image Generation
+104. Personalized Headshot Generation
+105. Text-to-Video Generation
+106. Enterprise RAG over Internal Documents
+107. Customer Support Chatbot with Human Escalation
+108. Semantic Enterprise Search with Cited Answers
+109. Code Assistant over a Large Repository
+110. Coding Agent with Tools and Verification
+111. Agentic Workflow / Personal Assistant
+112. Content Generation / Summarization at Scale
+113. LLM-based Recommendation / Personalization
+114. Multi-tenant LLM Gateway
+115. Document Processing / Extraction Pipeline
+116. Content Moderation with LLM + classifiers
+117. Realtime Streaming Chat
+118. Semantic Search / Embedding Service
+119. Multimodal Assistant
+120. LLM Evaluation Platform
+121. Safety / Guardrail Platform
+122. LLM Observability Platform
+123. Cost-aware Model Router
+124. Long-context Q&A System
+125. Model Serving / Inference Platform
