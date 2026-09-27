@@ -65,6 +65,10 @@ If assessment exposes a missing prerequisite, the mentor temporarily enters the 
 6. `PROGRESS.md`
 7. `SESSION_STATE.md`
 
+## Superset guarantee
+
+The current curriculum is intended to be a **strict superset** of earlier versions. Reorganization must never silently remove an existing topic or interview problem. A permanent legacy-coverage section in `INTERVIEW_CURRICULUM.md` preserves the earlier question bank exactly.
+
 ## Important distinction
 
 The problem banks provide **coverage**. They do not determine learning order.
