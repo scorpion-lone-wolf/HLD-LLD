@@ -28,6 +28,8 @@ A domain cannot be interview-ready while a critical prerequisite is below Level 
 | Verification | Defines correctness/success signals |
 | Adaptability | Handles requirement changes without losing structure |
 | Time management | Reaches important deep dives within the interview window |
+| Failure reasoning | Covers negative paths, retries, degradation or invalid states when relevant |
+| Evidence discipline | Distinguishes assumptions, measurements and demonstrated facts |
 
 ## LLD / OOD readiness
 
@@ -42,7 +44,9 @@ The learner can:
 - adapt to a new requirement;
 - identify race conditions when relevant;
 - justify patterns rather than force them;
-- reason about complexity of important operations.
+- reason about complexity of important operations;
+- explain async/concurrency behavior when Node.js/event-driven execution is relevant;
+- modify an unfamiliar codebase without unnecessary rewrites.
 
 Practice all three formats:
 1. class/design discussion;
@@ -62,7 +66,10 @@ The learner can:
 - discuss reliability, security and observability;
 - identify bottlenecks;
 - defend trade-offs;
-- evolve under increased scale or new constraints.
+- evolve under increased scale or new constraints;
+- reason about deploy/failover/change safety;
+- use observability signals to explain how failures would be detected;
+- discuss advanced mechanisms such as storage-engine trade-offs or consensus when the prompt actually requires them.
 
 ## ML system-design readiness
 
@@ -80,7 +87,10 @@ The learner can:
 - plan online experiments;
 - detect train/serve skew and drift;
 - define monitoring/retraining;
-- identify feedback loops, bias and failure modes.
+- identify feedback loops, bias and failure modes;
+- connect offline metrics to product/online metrics;
+- define rollback/fallback behavior when a model or feature pipeline fails;
+- reason about data freshness, label delay and cold-start when relevant.
 
 ## GenAI system-design readiness
 
@@ -97,7 +107,33 @@ The learner can:
 - reason about caching, batching, routing and fallbacks;
 - design agent/tool failure handling and human escalation;
 - include observability/regression monitoring;
-- for generative-media prompts, explain relevant model/evaluation pipeline at appropriate depth.
+- for generative-media prompts, explain relevant model/evaluation pipeline at appropriate depth;
+- distinguish retrieval failure from generation failure;
+- define permission checks at retrieval/tool-execution boundaries;
+- design verification/idempotency for agent actions;
+- state a measurable evaluation plan before claiming the system is good.
+
+## Resume / production deep-dive readiness
+
+The learner can:
+- describe the actual problem, scale and constraints of a real system;
+- separate personal contribution from team ownership;
+- defend key decisions under "why not X?" pushback;
+- describe at least one failure, incident or meaningful limitation;
+- explain how the system was monitored;
+- give measured outcomes where known without inventing numbers;
+- state what they would change today and why.
+
+## AI-assisted round readiness
+
+When AI use is permitted, the learner can:
+- state a plan before tool use;
+- critically review generated code/design;
+- test and verify output;
+- detect unsupported assumptions or hallucinations;
+- explain and own the final solution.
+
+AI assistance never substitutes for reasoning evidence.
 
 ## Mock progression
 
@@ -105,6 +141,8 @@ The learner can:
 2. Semi-independent
 3. Realistic untimed mock
 4. Timed mock
+
+Mock behavior and feedback format are defined in `MOCK_PLAYBOOK.md`.
 
 ## Domain graduation rule
 
