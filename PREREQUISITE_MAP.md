@@ -60,7 +60,9 @@ HLD-12/13/14 delivery + consistency + transactions
       ↓
 HLD-15/16/17/18/19 reliability + DR + observability + security + cost
       ↓
-HLD-20 coordination / leadership / consensus
+HLD-20 service architecture / evolution
+      ↓
+HLD-21 coordination / leadership / consensus
       ↓
 HLD case studies
 ```
