@@ -41,6 +41,10 @@ Understand expected outputs for:
 - trade-off narration
 - handling pushback
 - avoiding premature technology/model selection
+- narrating important decisions instead of thinking silently
+- avoiding unsupported scale/ownership claims
+- communicating failure paths, not only happy paths
+- decision structure: assumption → reason → decision → trade-off → verification
 
 ## INT-04 Universal answer structures
 
@@ -113,8 +117,9 @@ These are not mandatory lectures. Assessment activates only the gaps that matter
 - HTTP/HTTPS
 - request/response lifecycle
 - latency vs throughput
+- REST vs gRPC vs GraphQL trade-offs
 - WebSocket concept
-- gRPC concept
+- WebRTC architecture intuition: peer connection, signaling, STUN/TURN, SFU/MCU at interview depth
 
 ### FND-07 API fundamentals
 - resources
@@ -135,6 +140,8 @@ These are not mandatory lectures. Assessment activates only the gaps that matter
 ### FND-09 Indexes and transactions
 - index purpose/cost
 - composite indexes
+- normalization vs denormalization
+- query-plan / query-optimization intuition
 - ACID
 - isolation intuition
 - locks
@@ -314,6 +321,8 @@ Complete at least two unfamiliar LLD mocks, including one timed and one with run
 - data access patterns
 - schema choice
 - relational vs NoSQL reasoning
+- Backend-for-Frontend (BFF) when clients genuinely need different aggregation/contracts
+- connection-pool purpose, sizing intuition and exhaustion failure mode
 
 ## HLD-04 Load balancing
 - health checks
@@ -361,12 +370,17 @@ Complete at least two unfamiliar LLD mocks, including one timed and one with run
 - CDN
 - search indexes
 - full-text vs transactional DB
+- B-tree vs LSM-tree intuition and read/write/compaction trade-offs
+- replication vs erasure coding for durability/storage efficiency
 
-## HLD-11 Queues and pub-sub
+## HLD-11 Queues, pub-sub and data processing
 - async decoupling
 - queue vs pub-sub
 - consumer groups
 - backpressure
+- batch vs stream processing
+- windowing / late-event intuition when streaming requires it
+- MapReduce conceptual model for large offline processing
 
 ## HLD-12 Delivery, retries, ordering
 - at-most-once
@@ -388,7 +402,7 @@ Complete at least two unfamiliar LLD mocks, including one timed and one with run
 - compensating action
 - transactional outbox
 
-## HLD-15 Reliability patterns
+## HLD-15 Reliability and safe-change patterns
 - timeout
 - retry
 - circuit breaker
@@ -396,6 +410,11 @@ Complete at least two unfamiliar LLD mocks, including one timed and one with run
 - rate limiting
 - load shedding
 - backpressure
+- blue-green deployment
+- canary release
+- feature flags and kill switches
+- rollback vs roll-forward thinking
+- strangler pattern for incremental legacy/monolith migration
 
 ## HLD-16 Availability / DR
 - redundancy
@@ -407,23 +426,37 @@ Complete at least two unfamiliar LLD mocks, including one timed and one with run
 - metrics
 - logs
 - traces
+- correlation / request / trace IDs across service boundaries
 - SLIs/SLOs/SLAs
 - alert quality
 - debugging distributed latency
+- deployment/change correlation during incident diagnosis
 
 ## HLD-18 Security
 - authentication
 - authorization
 - encryption in transit/at rest
-- secrets
+- secrets management and rotation
 - least privilege
 - abuse/rate controls
+- unsafe deserialization / untrusted-input boundaries
+- SSRF/injection awareness at architecture-review depth
 
 ## HLD-19 Cost-aware design
 - storage/compute/network cost
 - managed vs self-hosted
 - overprovisioning vs autoscaling
 - hot path cost
+
+## HLD-20 Coordination, leadership and consensus
+- leader election
+- distributed lock purpose and failure hazards
+- fencing-token intuition
+- consensus problem: why independent nodes need agreement
+- Raft conceptual model: leader, log replication, majority commit, failover
+- Paxos recognition-level intuition and relationship to consensus
+- quorum/majority safety intuition
+- when application code should use an existing coordination system rather than implement consensus
 
 ### HLD foundation gate
 Given requirements, produce API + data model + simple architecture and justify every major component.
@@ -473,6 +506,9 @@ Given requirements, produce API + data model + simple architecture and justify e
 | Food Delivery | HLD-03/07/11/13 |
 | Ride Sharing | HLD-03/07/10/11 |
 | Collaborative Documents | HLD-12/13 + OT/CRDT concept when needed |
+| Video Conferencing / Zoom-style | FND-06, HLD-04/10/15/16/17 | WebRTC, SFU/MCU, media routing, degradation |
+| Global Edge / CDN Platform | HLD-04/05/10/15/16/17/19 | routing, caching, failure isolation, cost |
+| Distributed Coordination Service | HLD-06/12/13/20 | leader election, consensus, failover |
 | Distributed Cache | HLD-05/06/07/08 |
 
 Additional public practice titles:
@@ -1035,9 +1071,14 @@ Publicly visible topic coverage has been informed by ByteByteGo's OOD, System De
 
 # Legacy Coverage Guarantee — Do Not Remove
 
-This section preserves the exact interview-problem titles that existed in the earlier unified curriculum. The structured ladders above may rename/group problems for learning order, but **every title below remains part of the required practice bank**.
+Coverage preservation has two layers:
 
-Future curriculum revisions must be a **strict superset** of this bank: topics/questions may be added, regrouped, or aliased, but not removed.
+1. **Concept/capability preservation** is audited in `LEGACY_COVERAGE_MANIFEST.md`.
+2. **Problem-title preservation** is maintained below.
+
+The structured ladders above may rename/group concepts and problems for learning order, but prior concepts/capabilities and every title below must remain discoverable.
+
+Future curriculum revisions must be a **strict superset**: material may be added, regrouped, moved to conditional depth, or aliased, but not silently removed.
 
 1. Parking Lot
 2. Vending Machine
